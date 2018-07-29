@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define MAX 10
+double max_of(double tmp[],int n,double max){
+  if (n>0){
+    if(max<max_of(tmp,n-1,max))
+      return tmp[n-1];
+    else
+      return max;
+  }
+  else
+    return(max);
+}
+
+void scan_data(double x[],int n){
+  int i;
+  for(i=0;i<n;i++){
+    printf("x[i]=",i);
+    scanf("%lf",&x[i]);
+  }
+}
+
+int main(void){
+  double data[MAX];
+  int num;
+  puts("最大値を求めます。");
+  do{
+    printf("データを何個入力しますか:");
+    scanf("%d",&num);
+    if(num<0)
+      printf("正の数を入力してください。");
+    else if(MAX<=num)
+      printf("%d以下の正を入力してください。",MAX);
+    printf("ooo\n");
+  }while(num<0||MAX<=num);
+  printf("ooo\n");
+  scan_data(data,num,data[num]);
+  printf("最大値は%fです。\n",max_of(data,num));
+  return 0;
+}
