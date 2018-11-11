@@ -1,6 +1,43 @@
 \documentclass{jsarticle}
 \usepackage{amsmath}
+
+\makeatletter
+
+\def\@thesis{タイトル}
+\def\id#1{\def\@id{#1}}
+\def\department#1{\def\@department{#1}}
+
+\def\@maketitle{
+  \begin{center}
+  {\huge \@thesis \par} %修士論文と記載される部分
+  \vspace{10mm}
+  {\LARGE\bf \@title \par}% 論文のタイトル部分
+  \vspace{10mm}
+  {\Large \@date\par}% 提出年月日部分
+  \vspace{20mm}
+  {\Large \@department \par}% 所属部分
+  {\Large 学籍番号　\@id \par}% 学籍番号部分
+  %{\Large メールアドレス　\@email \par}
+  \vspace{10mm}
+  {\large \@author}% 氏名
+  \end{center}
+  \par\vskip 1.5em
+}
+
+\makeatother
+
+\title{レポート課題　担当:藤澤先生}
+\date{\today}
+\department{学科コース名など}
+\id{学籍番号}
+%¥email{v021de@yamaguchi-u.ac.jp}
+\author{名前}
+
 \begin{document}
+\maketitle
+\center
+\thanks{E-mailアドレス:}
+\newpage
 
 
 \begin{enumerate}
